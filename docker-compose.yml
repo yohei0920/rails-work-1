@@ -1,0 +1,18 @@
+version: '3'
+services:
+  db:
+    image: postgres
+    volumes:
+      - postgre_data:/var/lib/mysql
+    environment:
+      POSTGRES_PASSWORD: password
+  web:
+    build: .
+    volumes:
+      - .:/myapp
+    ports:
+      - "3000:3000"
+    depends_on:
+      - db
+volumes:
+  postgre_data:
