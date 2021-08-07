@@ -3,7 +3,7 @@ services:
   db:
     image: postgres
     volumes:
-      - postgre_data:/var/lib/mysql
+      - postgre_data:/usr/local/bundle
     environment:
       POSTGRES_PASSWORD: password
   web:
